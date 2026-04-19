@@ -13,7 +13,7 @@ body {
 
 
 .navbar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #06345C 100%);
     position: sticky;
     top: 0;
     z-index: 999;
@@ -112,7 +112,7 @@ body {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: #667eea;
+        background-color: #06345C;
         width: 100%;
         text-align: center;
         transition: 0.3s;
