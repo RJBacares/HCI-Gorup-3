@@ -5,59 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+        .hero {
+            background-color: #667eea;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 80, 255, 0.45);
+            z-index: 1;
+        }
+
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            animation: slideUp 0.8s ease;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .section p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
+
 <body>
- 
+
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo">
                 <a href="#home">BicolWork</a>
             </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about" class="nav-link">Data Gathering</a>
                 </li>
+
                 <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#services" class="nav-link">Results</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-
     <section id="home" class="hero">
         <h1>Welcome to BicolWork</h1>
-        <p>We are students conducting a study about “BicolWork,” a system designed to assist  jobseekers in finding employment that matches their skills and preferences. The system  addresses common challenges such as the overwhelming number of job listings and the  lack of personalized guidance by providing relevant job listings and tailored  recommendations.</p>
+        <p>
+            The Home Page introduces the Website being evaluated by showing its title, the names and roles of group members, and their photos.
+        </p>
+
+        <img src="https://www.infra.ratepersqft.com/wp-content/uploads/2025/01/types-of-construction-workers​-975x548.webp" 
+             alt="Construction Workers">
     </section>
 
     <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>Learn more about our services and what we offer.</p>
+        <h2>Data Gathering</h2>
+        <p>
+            This page focuses on collecting evaluation data from respondents. It includes the consent form, respondent profiles or summaries, and survey instruments such as heuristic evaluation workbooks and usability testing tools. It also contains documentation like photos taken during testing and other supporting files.
+        </p>
     </section>
 
     <section id="services" class="section">
         <h2>Services</h2>
-        <p>We provide quality services tailored to your needs.</p>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Get in touch with us for more information.</p>
+        <p>
+            This section presents the findings from usability testing, highlighting key issues identified during evaluation. It discusses what the results mean in relation to the prototype’s design and usability. It then provides recommendations for improvements and suggests specific design enhancements, along with an attached PDF of the completed heuristic evaluation workbook.
+        </p>
     </section>
 
     <footer>
-        <p>&copy; 2026 My Website. All rights reserved.</p>
+        <p>&copy; Contacts</p>
     </footer>
 
     <script src="script.js"></script>

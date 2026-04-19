@@ -76,55 +76,7 @@ body {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.3s;
-    border-radius: 3px;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-8px, -8px);
-}
-
-.hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    animation: slideDown 0.8s ease;
-}
-
-.hero p {
-    font-size: 20px;
-    animation: slideUp 0.8s ease;
-}
 
 @keyframes slideDown {
     from {
@@ -148,32 +100,7 @@ body {
     }
 }
 
-.section {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 50px 20px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
 
-.section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #667eea;
-}
-
-.section p {
-    font-size: 18px;
-    color: #666;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
 
 @media screen and (max-width: 768px) {
     .hamburger {
