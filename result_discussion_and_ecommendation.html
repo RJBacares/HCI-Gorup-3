@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BicolWork - Results</title>
+<link rel="stylesheet" href="datagathering.css">
+
+<style>
+.hero-small {
+    background: linear-gradient(135deg, #667eea, #06345C);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section h2 {
+    text-align: center;
+    color: #06345C;
+    margin-bottom: 30px;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stat-box {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stat-box h3 {
+    font-size: 28px;
+    color: #667eea;
+}
+
+/* TEXT */
+.content {
+    line-height: 1.6;
+    color: #444;
+}
+
+.content h3 {
+    margin-top: 30px;
+    color: #06345C;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #06345C;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* RECOMMENDATION */
+.recommendation {
+    background: #f4f7ff;
+    padding: 20px;
+    border-left: 5px solid #667eea;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-logo">
+            <a href="index.html">BicolWork</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="datagathering.html">Data Gathering</a></li>
+            <li><a href="results.html">Results</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero-small">
+    <h1>Results, Discussion & Recommendations</h1>
+    <p>Usability Evaluation of the BicolWork System</p>
+</section>
+
+<!-- STATS -->
+<section class="section">
+    <h2>Summary of Results</h2>
+
+    <div class="stats">
+        <div class="stat-box">
+            <h3>15</h3>
+            <p>Participants</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>78%</h3>
+            <p>Completion Rate</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>6</h3>
+            <p>Major Issues Found</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>3.5 / 5</h3>
+            <p>Usability Rating</p>
+        </div>
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section content">
+    <h2>Results</h2>
+
+    <p>
+        The usability testing conducted revealed that users experienced challenges in navigating
+        the system, particularly when accessing features on mobile devices. Several participants
+        reported confusion due to unclear button labels and inconsistent layout structure.
+        Additionally, slow page loading time affected task completion efficiency.
+    </p>
+
+    <h3>Identified Issues</h3>
+
+    <table>
+        <tr>
+            <th>Issue</th>
+            <th>Description</th>
+            <th>Severity</th>
+        </tr>
+
+        <tr>
+            <td>Navigation Difficulty</td>
+            <td>Users could not easily locate menu options</td>
+            <td>High</td>
+        </tr>
+
+        <tr>
+            <td>Unclear Labels</td>
+            <td>Buttons and links were confusing</td>
+            <td>Medium</td>
+        </tr>
+
+        <tr>
+            <td>Slow Loading</td>
+            <td>Pages took too long to load</td>
+            <td>High</td>
+        </tr>
+
+        <tr>
+            <td>Poor Layout</td>
+            <td>Spacing and alignment issues</td>
+            <td>Medium</td>
+        </tr>
+    </table>
+
+    <h2>Discussion</h2>
+
+    <p>
+        These results indicate that the system does not fully follow established UI/UX principles
+        such as consistency, visibility, and user control. The navigation issues suggest that users
+        are not able to interact efficiently with the system. Improving interface clarity and
+        responsiveness is necessary to enhance usability and satisfaction.
+    </p>
+
+    <h2>Recommendations</h2>
+
+    <div class="recommendation">
+        <ul>
+            <li>Improve navigation by adding a responsive menu.</li>
+            <li>Use clear and consistent labels for all UI elements.</li>
+            <li>Optimize performance to reduce loading time.</li>
+            <li>Enhance layout with proper spacing and alignment.</li>
+            <li>Apply consistent colors and typography.</li>
+            <li>Conduct further usability testing after redesign.</li>
+        </ul>
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; 2026 BicolWork. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
