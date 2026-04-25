@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BicolWork - Job Matching Results</title>
+
+<style>
+:root {
+    --primary: #0A2540;
+    --secondary: #3A86FF;
+    --light: #f1f5f9;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    background: #f8fafc;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--primary);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(120deg, #0A2540, #3A86FF);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* SECTION */
+.section-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #e5e7eb;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.metric {
+    background: var(--light);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.metric strong {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+/* JOB CARD */
+.job {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.job h4 {
+    margin: 0;
+    color: var(--secondary);
+}
+
+.match {
+    font-size: 13px;
+    margin-top: 5px;
+    color: green;
+}
+
+/* LIST */
+ul {
+    padding-left: 18px;
+}
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div>BicolWork System</div>
+    <div>Results</div>
+</div>
+
+<div class="hero">
+    <h1>Job Matching System Results</h1>
+    <p>User-Based Evaluation and System Performance</p>
+</div>
+
+<div class="container">
+
+    <!-- SUMMARY -->
+    <div class="section-title">User-Based Summary</div>
+    <div class="card">
+        <p>
+            The Bicol Job Matching System effectively connects users with relevant job opportunities
+            based on their skills, location, and preferences. Most users were able to find suitable
+            job matches, although improvements in filtering accuracy and system speed are still needed.
+        </p>
+
+        <div class="grid">
+            <div class="metric">
+                <strong>78%</strong>
+                <div>Match Accuracy</div>
+            </div>
+            <div class="metric">
+                <strong>72%</strong>
+                <div>User Satisfaction</div>
+            </div>
+            <div class="metric">
+                <strong>65%</strong>
+                <div>Successful Matches</div>
+            </div>
+            <div class="metric">
+                <strong>Moderate</strong>
+                <div>System Efficiency</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SAMPLE MATCH -->
+    <div class="section-title">Sample Job Matches</div>
+    <div class="card">
+
+        <div class="job">
+            <h4>Web Developer</h4>
+            <p>Company: BicolTech Solutions</p>
+            <p>Location: Naga City</p>
+            <div class="match">Match Score: 90% (Skills: HTML, CSS, JavaScript)</div>
+        </div>
+
+        <div class="job">
+            <h4>Office Assistant</h4>
+            <p>Company: Local Government Unit</p>
+            <p>Location: Camarines Sur</p>
+            <div class="match">Match Score: 85% (Skills: Encoding, MS Office)</div>
+        </div>
+
+        <div class="job">
+            <h4>Sales Associate</h4>
+            <p>Company: Bicol Retail Group</p>
+            <p>Location: Legazpi City</p>
+            <div class="match">Match Score: 80% (Skills: Communication, Sales)</div>
+        </div>
+
+    </div>
+
+    <!-- RESULTS -->
+    <div class="section-title">Key Findings</div>
+    <div class="card">
+        <ul>
+            <li>The system successfully recommends jobs based on user skills.</li>
+            <li>Location-based filtering helps users find nearby opportunities.</li>
+            <li>Some mismatches occur due to incomplete user profiles.</li>
+            <li>System speed affects real-time job matching.</li>
+        </ul>
+    </div>
+
+    <!-- DISCUSSION -->
+    <div class="section-title">Discussion</div>
+    <div class="card">
+        <p>
+            The results indicate that the job matching feature is functional and beneficial
+            for users in Bicol. However, improvements in algorithm accuracy and data completeness
+            are necessary to ensure better job recommendations. Enhancing system responsiveness
+            will also improve user experience.
+        </p>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <div class="section-title">Recommendations</div>
+    <div class="card">
+        <ul>
+            <li>Improve matching algorithm for higher accuracy</li>
+            <li>Require complete user profiles before matching</li>
+            <li>Enhance filtering by skills and location</li>
+            <li>Optimize system for faster results</li>
+            <li>Integrate real-time job updates</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 BicolWork System</p>
+</footer>
+
+</body>
+</html>
