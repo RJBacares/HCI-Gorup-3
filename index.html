@@ -151,14 +151,112 @@
         <p>
             This page focuses on collecting evaluation data from respondents. It includes the consent form, respondent profiles or summaries, and survey instruments such as heuristic evaluation workbooks and usability testing tools. It also contains documentation like photos taken during testing and other supporting files.
         </p>
-    </section>
+        
+        <section id="data" class="section">
+            <p class="section-subtitle">Click any card to view details.</p>
 
-    <section id="services" class="section">
-        <h2>Results</h2>
-        <p>
-            This section presents the findings from usability testing, highlighting key issues identified during evaluation. It discusses what the results mean in relation to the prototype’s design and usability. It then provides recommendations for improvements and suggests specific design enhancements, along with an attached PDF of the completed heuristic evaluation workbook.
-        </p>
+            <div class="data-container">
+
+                <div class="data-card" onclick="openModal('consentModal')">
+                    <h3>Consent Form</h3>
+                    <p>View participant consent form.</p>
+                </div>
+
+                <div class="data-card" onclick="openModal('respondentModal')">
+                    <h3>Respondent Information</h3>
+                    <p>View respondent records.</p>
+                </div>
+
+                <div class="data-card" onclick="openModal('surveyModal')">
+                    <h3>Survey Instruments</h3>
+                    <p>View questionnaire form.</p>
+                </div>
+
+                <div class="data-card" onclick="openModal('docModal')">
+                    <h3>Documentation</h3>
+                    <p>View reports and photos.</p>
+                </div>
+
+            </div>
+        </section>
+
     </section>
+        <!-- CONSENT MODAL -->
+    <div class="modal" id="consentModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('consentModal')">&times;</span>
+            <h2>Consent Form</h2>
+            <p>Consent form content here soon.</p>
+        </div>
+    </div>
+
+
+    <!-- RESPONDENT MODAL -->
+    <div class="modal" id="respondentModal">
+        <div class="modal-content large-modal">
+            <span class="close" onclick="closeModal('respondentModal')">&times;</span>
+            <h2>Respondent Information</h2>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Year & Section</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+
+                <tr>
+                    <td>04/19/26</td>
+                    <td>Juan Dela Cruz</td>
+                    <td>BSIT 3A</td>
+                    <td>21</td>
+                    <td>Male</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- SURVEY MODAL -->
+    <div class="modal" id="surveyModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('surveyModal')">&times;</span>
+            <h2>Survey Instruments</h2>
+            <p>Survey questionnaire will appear here soon.</p>
+        </div>
+    </div>
+
+
+    <!-- DOCUMENTATION MODAL -->
+    <div class="modal" id="docModal">
+        <div class="modal-content large-modal">
+            <span class="close" onclick="closeModal('docModal')">&times;</span>
+
+            <h2>Documentation</h2>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>04/19/26</td>
+                    <td><a href="#">Testing Report 1</a></td>
+                    <td>Initial testing report.</td>
+                </tr>
+
+                <tr>
+                    <td>04/20/26</td>
+                    <td><a href="#">Survey Photos</a></td>
+                    <td>Photos during testing.</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
 
     <footer>
         <p> Contact Information</p>
