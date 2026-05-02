@@ -1,0 +1,100 @@
+.survey-wrapper{
+    padding: 25px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* TITLE */
+.survey-title{
+    font-size: 24px;
+    font-weight: 700;
+    color: #06345C;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* BLOCK */
+.survey-block{
+    margin-bottom: 18px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border-left: 4px solid #06345C;
+}
+
+/* LABEL */
+.survey-label{
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+/* INPUT */
+.survey-input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* RADIO */
+.survey-options{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.survey-options.horizontal{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.survey-options label{
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* INLINE INPUT */
+.survey-inline{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.survey-inline-input{
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    padding: 3px;
+}
+
+/* BUTTONS */
+.btn-continue,
+.btn-submit{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #06345C;
+    color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn-back{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #ccc;
+    color: black;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* HIDE STEP */
+.hidden{
+    display: none;
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="consent.css">
+    <link rel="stylesheet" href="survey.css">
+
+    <style>
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+        .hero {
+            background-color: #667eea;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(6, 52, 92, 0.45);
+            z-index: 1;
+        }
+
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            animation: slideUp 0.8s ease;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #06345C;
+        }
+
+        .section p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="#home">BicolWork</a>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Data Gathering</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Results</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Welcome to BicolWork</h1>
+        <p>
+            The Home Page introduces the Website being evaluated by showing its title, the names and roles of group members, and their photos.
+        </p>
+
+        <img src="https://www.infra.ratepersqft.com/wp-content/uploads/2025/01/types-of-construction-workers​-975x548.webp" 
+             alt="Construction Workers">
+    </section>
+
+    <section id="about" class="section">
+        <h2>Data Gathering</h2>
+        <p>
+            This page focuses on collecting evaluation data from respondents. It includes the consent form, respondent profiles or summaries, and survey instruments such as heuristic evaluation workbooks and usability testing tools. It also contains documentation like photos taken during testing and other supporting files.
+        </p>
+        
+        <section id="data" class="section">
+            <p class="section-subtitle">Click any card to view details.</p>
+
+            <div class="data-container">
+
+                <div class="data-card" onclick="openModal('consentModal')">
+                    <h3>Consent Form</h3>
+                    <p>View participant consent form.</p>
+                </div>
+
+                <div class="data-card" onclick="openModal('respondentModal')">
+                    <h3>Respondent Information</h3>
+                    <p>View respondent records.</p>
+                </div>
+
+                <div class="data-card" onclick="openModal('surveyModal')">
+                    <h3>Survey Instruments</h3>
+                    <p>View questionnaire form.</p>
+                </div>
+
+                <div class="data-card" onclick="openModal('docModal')">
+                    <h3>Documentation</h3>
+                    <p>View reports and photos.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+        <!-- CONSENT MODAL -->
+    <div class="modal" id="consentModal">
+    <div class="modal-content" id="consentContent">
+
+        <span class="close" onclick="closeModal('consentModal')">&times;</span>
+
+        <!-- DEFAULT CONTENT (pwede mo iwan or blank) -->
+        <h2>Consent Form</h2>
+        <p>Consent form content here soon.</p>
+
+        <button class="btn-continue" onclick="loadConsentForm()">
+            Continue
+        </button>
+
+    </div>
+</div>
+
+
+    <!-- RESPONDENT MODAL -->
+    <div class="modal" id="respondentModal">
+        <div class="modal-content large-modal">
+            <span class="close" onclick="closeModal('respondentModal')">&times;</span>
+            <h2>Respondent Information</h2>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Year & Section</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+
+                <tr>
+                    <td>04/19/26</td>
+                    <td>Juan Dela Cruz</td>
+                    <td>BSIT 3A</td>
+                    <td>21</td>
+                    <td>Male</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- SURVEY MODAL -->
+    <div class="modal" id="surveyModal">
+    <div class="modal-content" id="surveyContent">
+        <!-- JS will inject content here -->
+    </div>
+</div>
+
+
+    <!-- DOCUMENTATION MODAL -->
+    <div class="modal" id="docModal">
+        <div class="modal-content large-modal">
+            <span class="close" onclick="closeModal('docModal')">&times;</span>
+
+            <h2>Documentation</h2>
+
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>04/19/26</td>
+                    <td><a href="#">Testing Report 1</a></td>
+                    <td>Initial testing report.</td>
+                </tr>
+
+                <tr>
+                    <td>04/20/26</td>
+                    <td><a href="#">Survey Photos</a></td>
+                    <td>Photos during testing.</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <footer>
+        <p> Contact Information</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="consent.js"></script>
+    <script src="survey.js"></script>
+</body>
+</html>
