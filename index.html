@@ -9,69 +9,227 @@
 
     <style>
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px 0;
-            transition: 0.3s;
-            border-radius: 3px;
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height:1.6;
+            color:#333;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-8px, 8px);
+        .navbar{
+            background:#06345C;
+            position:sticky;
+            top:0;
+            z-index:999;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
+        .navbar-container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            height:70px;
         }
 
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-8px, -8px);
+        .navbar-logo a{
+            color:white;
+            font-size:28px;
+            font-weight:bold;
+            text-decoration:none;
         }
 
-        .hero {
-            background-color: #667eea;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            position: relative;
-            overflow: hidden;
+        .nav-menu{
+            display:flex;
+            list-style:none;
+            gap:30px;
         }
 
-        .hero img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
+        .nav-link{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:500;
+            transition:.3s;
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(6, 52, 92, 0.45);
-            z-index: 1;
+        .nav-link:hover{
+            color:#ffd700;
+        }
+
+        .hero{
+            background-color:#667eea;
+            color:white;
+            text-align:center;
+            padding:100px 20px;
+            min-height:400px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .hero img{
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:0;
+        }
+
+        .hero::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:rgba(6,52,92,0.45);
+            z-index:1;
         }
 
         .hero h1,
-        .hero p {
-            position: relative;
-            z-index: 2;
+        .hero p{
+            position:relative;
+            z-index:2;
+        }
+
+        .section{
+            max-width:1200px;
+            margin:auto;
+            padding:60px 20px;
+            text-align:center;
+        }
+
+        .section h2{
+            color:#667eea;
+            font-size:36px;
+            margin-bottom:15px;
+        }
+
+        .section-subtitle{
+            margin-bottom:40px;
+            color:#777;
+        }
+
+        .data-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-top:30px;
+        }
+
+        .data-card{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,.08);
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .data-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 15px 30px rgba(102,126,234,.25);
+        }
+
+        .data-card h3{
+            color:#667eea;
+            margin-bottom:10px;
+        }
+
+        .modal{
+            display:none;
+            position:fixed;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,.6);
+            z-index:9999;
+        }
+
+        .modal-content{
+            background:white;
+            width:80%;
+            max-width:700px;
+            margin:7% auto;
+            padding:30px;
+            border-radius:15px;
+            position:relative;
+        }
+
+        .large-modal{
+            max-width:900px;
+        }
+
+        .close{
+            position:absolute;
+            top:10px;
+            right:20px;
+            font-size:30px;
+            cursor:pointer;
+        }
+
+        .box{
+            background:white;
+            padding:25px;
+            margin-top:25px;
+            border-radius:12px;
+            box-shadow:0 5px 15px rgba(0,0,0,.08);
+        }
+
+        .box h3{
+            color:#667eea;
+            margin-bottom:15px;
+        }
+
+        .box p{
+            margin-bottom:15px;
+            line-height:1.7;
+            color:#555;
+        }
+
+        .box ul{
+            padding-left:20px;
+            line-height:1.8;
+            color:#444;
+            text-align:left;
+        }
+
+        .box li{
+            margin-bottom:10px;
+        }
+
+        .pdf-link{
+            display:inline-block;
+            margin-top:30px;
+            padding:12px 18px;
+            background:#06345C;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+            transition:.3s;
+        }
+
+        .pdf-link:hover{
+            background:#ffd700;
+            color:#06345C;
+        }
+
+        footer{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:50px;
         }
 
     </style>
@@ -89,7 +247,7 @@
                 <a href="#home">BicolWork</a>
             </div>
 
-            <ul class="nav-menu" id="navMenu">
+            <ul class="nav-menu">
 
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
@@ -100,17 +258,14 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="#usability" class="nav-link">Usability Report</a>
+                </li>
+
+                <li class="nav-item">
                     <a href="#results" class="nav-link">Results</a>
                 </li>
 
             </ul>
-
-            <!-- HAMBURGER -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
 
         </div>
 
@@ -126,8 +281,9 @@
             the names and roles of group members, and their photos.
         </p>
 
-        <img src="https://www.infra.ratepersqft.com/wp-content/uploads/2025/01/types-of-construction-workers​-975x548.webp" 
+        <img src="https://www.infra.ratepersqft.com/wp-content/uploads/2025/01/types-of-construction-workers-975x548.webp"
              alt="Construction Workers">
+
     </section>
 
     <!-- DATA GATHERING -->
@@ -140,52 +296,93 @@
             It includes the Consent Form and SUS Survey, Respondent Profiles or summaries, and Documentation section for reports and photos during testing.
         </p>
 
-        <div id="data">
+        <div class="data-container">
 
-            <p class="section-subtitle">
-                Click any card to view details.
-            </p>
+            <div class="data-card"
+                 onclick="window.open('https://forms.gle/TBNwzZsZMgM1XcAn9','_blank')">
 
-            <div class="data-container">
+                <h3>Consent Form & SUS Questionnaire</h3>
 
-                <!-- CARD 1 -->
-                <div class="data-card" onclick="window.open('https://forms.gle/TBNwzZsZMgM1XcAn9', '_blank')">
+                <p>
+                    View participant consent form and SUS questionnaire in a new tab.
+                </p>
 
-                    <h3>
-                        Consent Form & SUS Questionnaire
-                    </h3>
+            </div>
 
-                    <p>
-                        View participant consent form and SUS questionnaire in a new tab.
-                    </p>
+            <div class="data-card" onclick="openModal('respondentModal')">
 
-                </div>
+                <h3>Respondent Information</h3>
 
-                <!-- CARD 2 -->
-                <div class="data-card" onclick="openModal('respondentModal')">
+                <p>
+                    View respondent records.
+                </p>
 
-                    <h3>Respondent Information</h3>
+            </div>
 
-                    <p>
-                        View respondent records.
-                    </p>
+            <div class="data-card" onclick="openModal('docModal')">
 
-                </div>
+                <h3>Documentation</h3>
 
-                <!-- CARD 3 -->
-                <div class="data-card" onclick="openModal('docModal')">
-
-                    <h3>Documentation</h3>
-
-                    <p>
-                        View reports and photos.
-                    </p>
-
-                </div>
+                <p>
+                    View reports and photos.
+                </p>
 
             </div>
 
         </div>
+
+    </section>
+
+    <!-- USABILITY TESTING REPORT -->
+    <section id="usability" class="section">
+
+        <h2>Usability Testing Report</h2>
+
+        <p>
+            Click any card to view the usability testing details.
+        </p>
+
+        <div class="data-container">
+
+            <div class="data-card" onclick="openModal('summaryUsabilityModal')">
+
+                <h3>Summary of Usability Testing Results</h3>
+
+                <p>
+                    View the overall usability testing summary.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('issuesModal')">
+
+                <h3>Key Issues Identified</h3>
+
+                <p>
+                    View the usability problems discovered during testing.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('discussionModal')">
+
+                <h3>Discussion of Findings</h3>
+
+                <p>
+                    View discussion and interpretation of usability findings.
+                </p>
+
+            </div>
+
+        </div>
+
+        <a href="https://media.nngroup.com/media/articles/attachments/Heuristic_Evaluation_Workbook_-_Nielsen_Norman_Group.pdf"
+           target="_blank"
+           class="pdf-link">
+
+            📄 Download Heuristic Evaluation Workbook (PDF)
+
+        </a>
 
     </section>
 
@@ -195,97 +392,200 @@
         <h2>Results</h2>
 
         <p>
-            Results and findings will appear here soon.
+            Click any card to view results, discussions, and recommendations.
         </p>
+
+        <div class="data-container">
+
+            <div class="data-card" onclick="openModal('summaryModal')">
+
+                <h3>Summary of Results</h3>
+
+                <p>
+                    View usability evaluation summary and findings.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('jobModal')">
+
+                <h3>Job Matching Results</h3>
+
+                <p>
+                    View job matching evaluation and system performance.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('recommendationModal')">
+
+                <h3>Discussion & Recommendations</h3>
+
+                <p>
+                    View recommendations and suggested improvements.
+                </p>
+
+            </div>
+
+        </div>
 
     </section>
 
-    <!-- CONSENT MODAL -->
-    <div class="modal" id="consentModal">
+    <!-- USABILITY SUMMARY MODAL -->
+    <div class="modal" id="summaryUsabilityModal">
 
-        <div class="modal-content">
+        <div class="modal-content large-modal">
 
-            <span class="close" onclick="closeModal('consentModal')">
-                &times;
+            <span class="close"
+                  onclick="closeModal('summaryUsabilityModal')">
+                  &times;
             </span>
 
-            <h2>Consent Form</h2>
+            <h2>Summary of Usability Testing Results</h2>
 
-            <p>
-                Consent form content here soon.
-            </p>
+            <div class="box">
+
+                <p>
+                    Overall, participants were able to complete the core tasks,
+                    but several usability issues were observed during navigation
+                    and task execution.
+                </p>
+
+            </div>
 
         </div>
 
     </div>
 
-    <!-- RESPONDENT MODAL -->
-    <div class="modal" id="respondentModal">
+    <!-- ISSUES MODAL -->
+    <div class="modal" id="issuesModal">
 
         <div class="modal-content large-modal">
 
-            <span class="close" onclick="closeModal('respondentModal')">
-                &times;
+            <span class="close"
+                  onclick="closeModal('issuesModal')">
+                  &times;
             </span>
 
-            <h2>Respondent Information</h2>
+            <h2>Key Issues Identified</h2>
 
-            <table>
+            <div class="box">
 
-                <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Year & Section</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                </tr>
+                <ul>
+                    <li>Navigation menus were confusing and inconsistent.</li>
+                    <li>Some buttons lacked clear labels.</li>
+                    <li>Loading times were longer than expected.</li>
+                </ul>
 
-                <tr>
-                    <td>04/19/26</td>
-                    <td>Juan Dela Cruz</td>
-                    <td>BSIT 3A</td>
-                    <td>21</td>
-                    <td>Male</td>
-                </tr>
-
-            </table>
+            </div>
 
         </div>
 
     </div>
 
-    <!-- DOCUMENTATION MODAL -->
-    <div class="modal" id="docModal">
+    <!-- DISCUSSION MODAL -->
+    <div class="modal" id="discussionModal">
 
         <div class="modal-content large-modal">
 
-            <span class="close" onclick="closeModal('docModal')">
-                &times;
+            <span class="close"
+                  onclick="closeModal('discussionModal')">
+                  &times;
             </span>
 
-            <h2>Documentation</h2>
+            <h2>Discussion of Findings</h2>
 
-            <table>
+            <div class="box">
 
-                <tr>
-                    <th>Date</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                </tr>
+                <p>
+                    The issues identified suggest that while the prototype is functional,
+                    improvements are needed in clarity, speed, and consistency
+                    to enhance user satisfaction.
+                </p>
 
-                <tr>
-                    <td>04/19/26</td>
-                    <td><a href="#">Testing Report 1</a></td>
-                    <td>Initial testing report.</td>
-                </tr>
+            </div>
 
-                <tr>
-                    <td>04/20/26</td>
-                    <td><a href="#">Survey Photos</a></td>
-                    <td>Photos during testing.</td>
-                </tr>
+        </div>
 
-            </table>
+    </div>
+
+    <!-- SUMMARY MODAL -->
+    <div class="modal" id="summaryModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('summaryModal')">
+                  &times;
+            </span>
+
+            <h2>Summary of Results</h2>
+
+            <div class="box">
+
+                <p>
+                    The usability evaluation of the Bicol Job Working System shows that users were able
+                    to understand basic system functions, but experienced difficulties in navigation,
+                    clarity of job information, and system responsiveness.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JOB MODAL -->
+    <div class="modal" id="jobModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('jobModal')">
+                  &times;
+            </span>
+
+            <h2>Job Matching Results</h2>
+
+            <div class="box">
+
+                <ul>
+                    <li>The system successfully recommends jobs based on user skills.</li>
+                    <li>Location-based filtering helps users find nearby opportunities.</li>
+                    <li>Some mismatches occur due to incomplete user profiles.</li>
+                    <li>System speed affects real-time job matching.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RECOMMENDATION MODAL -->
+    <div class="modal" id="recommendationModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('recommendationModal')">
+                  &times;
+            </span>
+
+            <h2>Discussion & Recommendations</h2>
+
+            <div class="box">
+
+                <ul>
+                    <li>Improve navigation with a more user-friendly layout.</li>
+                    <li>Ensure all job listings have complete and clear details.</li>
+                    <li>Use consistent and descriptive button labels.</li>
+                    <li>Optimize system performance for faster loading.</li>
+                    <li>Enhance UI design for better readability and structure.</li>
+                    <li>Conduct further usability testing after improvements.</li>
+                </ul>
+
+            </div>
 
         </div>
 
@@ -300,7 +600,31 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+
+        function openModal(id){
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id){
+            document.getElementById(id).style.display = "none";
+        }
+
+        window.onclick = function(event){
+
+            const modals = document.querySelectorAll('.modal');
+
+            modals.forEach(modal => {
+
+                if(event.target == modal){
+                    modal.style.display = "none";
+                }
+
+            });
+
+        }
+
+    </script>
 
 </body>
 </html>
