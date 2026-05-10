@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>BicolWork</title>
+
     <link rel="stylesheet" href="styles.css">
 
     <style>
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -72,55 +74,23 @@
             z-index: 2;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            animation: slideDown 0.8s ease;
-        }
-
-        .hero p {
-            font-size: 20px;
-            animation: slideUp 0.8s ease;
-        }
-
-        .section {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #06345C;
-        }
-
-        .section p {
-            font-size: 18px;
-            color: #666;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 50px;
-        }
     </style>
+
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
+
         <div class="navbar-container">
+
             <div class="navbar-logo">
                 <a href="#home">BicolWork</a>
             </div>
 
             <ul class="nav-menu" id="navMenu">
+
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
@@ -130,74 +100,138 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#services" class="nav-link">Results</a>
+                    <a href="#results" class="nav-link">Results</a>
                 </li>
+
             </ul>
+
+            <!-- HAMBURGER -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
         </div>
+
     </nav>
 
+    <!-- HERO -->
     <section id="home" class="hero">
+
         <h1>Welcome to BicolWork</h1>
+
         <p>
-            The Home Page introduces the Website being evaluated by showing its title, the names and roles of group members, and their photos.
+            The Home Page introduces the Website being evaluated by showing its title,
+            the names and roles of group members, and their photos.
         </p>
 
         <img src="https://www.infra.ratepersqft.com/wp-content/uploads/2025/01/types-of-construction-workers​-975x548.webp" 
              alt="Construction Workers">
     </section>
 
+    <!-- DATA GATHERING -->
     <section id="about" class="section">
+
         <h2>Data Gathering</h2>
+
         <p>
-            This page focuses on collecting evaluation data from respondents. It includes the consent form, respondent profiles or summaries, and survey instruments such as heuristic evaluation workbooks and usability testing tools. It also contains documentation like photos taken during testing and other supporting files.
+            This page focuses on collecting evaluation data from respondents.
+            It includes the Consent Form and SUS Survey, Respondent Profiles or summaries, and Documentation section for reports and photos during testing.
         </p>
-        
-        <section id="data" class="section">
-            <p class="section-subtitle">Click any card to view details.</p>
+
+        <div id="data">
+
+            <p class="section-subtitle">
+                Click any card to view details.
+            </p>
 
             <div class="data-container">
 
-                <div class="data-card" onclick="openModal('consentModal')">
-                    <h3>Consent Form</h3>
-                    <p>View participant consent form.</p>
+                <!-- CARD 1 -->
+                <div class="data-card" onclick="window.open('https://forms.gle/TBNwzZsZMgM1XcAn9', '_blank')">
+
+                    <h3>
+                        Consent Form & SUS Questionnaire
+                    </h3>
+
+                    <p>
+                        View participant consent form and SUS questionnaire in a new tab.
+                    </p>
+
                 </div>
 
+                <!-- CARD 2 -->
                 <div class="data-card" onclick="openModal('respondentModal')">
+
                     <h3>Respondent Information</h3>
-                    <p>View respondent records.</p>
+
+                    <p>
+                        View respondent records.
+                    </p>
+
                 </div>
 
-                <div class="data-card" onclick="openModal('surveyModal')">
-                    <h3>Survey Instruments</h3>
-                    <p>View questionnaire form.</p>
-                </div>
-
+                <!-- CARD 3 -->
                 <div class="data-card" onclick="openModal('docModal')">
+
                     <h3>Documentation</h3>
-                    <p>View reports and photos.</p>
+
+                    <p>
+                        View reports and photos.
+                    </p>
+
                 </div>
 
             </div>
-        </section>
+
+        </div>
 
     </section>
-        <!-- CONSENT MODAL -->
-    <div class="modal" id="consentModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('consentModal')">&times;</span>
-            <h2>Consent Form</h2>
-            <p>Consent form content here soon.</p>
-        </div>
-    </div>
 
+    <!-- RESULTS -->
+    <section id="results" class="section">
+
+        <h2>Results</h2>
+
+        <p>
+            Results and findings will appear here soon.
+        </p>
+
+    </section>
+
+    <!-- CONSENT MODAL -->
+    <div class="modal" id="consentModal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal('consentModal')">
+                &times;
+            </span>
+
+            <h2>Consent Form</h2>
+
+            <p>
+                Consent form content here soon.
+            </p>
+
+        </div>
+
+    </div>
 
     <!-- RESPONDENT MODAL -->
     <div class="modal" id="respondentModal">
+
         <div class="modal-content large-modal">
-            <span class="close" onclick="closeModal('respondentModal')">&times;</span>
+
+            <span class="close" onclick="closeModal('respondentModal')">
+                &times;
+            </span>
+
             <h2>Respondent Information</h2>
 
             <table>
+
                 <tr>
                     <th>Date</th>
                     <th>Name</th>
@@ -213,29 +247,26 @@
                     <td>21</td>
                     <td>Male</td>
                 </tr>
+
             </table>
+
         </div>
+
     </div>
-
-
-    <!-- SURVEY MODAL -->
-    <div class="modal" id="surveyModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('surveyModal')">&times;</span>
-            <h2>Survey Instruments</h2>
-            <p>Survey questionnaire will appear here soon.</p>
-        </div>
-    </div>
-
 
     <!-- DOCUMENTATION MODAL -->
     <div class="modal" id="docModal">
+
         <div class="modal-content large-modal">
-            <span class="close" onclick="closeModal('docModal')">&times;</span>
+
+            <span class="close" onclick="closeModal('docModal')">
+                &times;
+            </span>
 
             <h2>Documentation</h2>
 
             <table>
+
                 <tr>
                     <th>Date</th>
                     <th>Title</th>
@@ -253,15 +284,23 @@
                     <td><a href="#">Survey Photos</a></td>
                     <td>Photos during testing.</td>
                 </tr>
+
             </table>
 
         </div>
+
     </div>
 
+    <!-- FOOTER -->
     <footer>
-        <p> Contact Information</p>
+
+        <p>
+            Contact Information
+        </p>
+
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
