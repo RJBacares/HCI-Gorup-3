@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BicolWork</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height:1.6;
+            color:#333;
+        }
+
+        .navbar{
+            background:#06345C;
+            position:sticky;
+            top:0;
+            z-index:999;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            height:70px;
+        }
+
+        .navbar-logo a{
+            color:white;
+            font-size:28px;
+            font-weight:bold;
+            text-decoration:none;
+        }
+
+        .nav-menu{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+
+        .nav-link{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:500;
+            transition:.3s;
+        }
+
+        .nav-link:hover{
+            color:#ffd700;
+        }
+
+        .hero{
+            background-color:#667eea;
+            color:white;
+            text-align:center;
+            padding:100px 20px;
+            min-height:400px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .hero img{
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:0;
+        }
+
+        .hero::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:rgba(6,52,92,0.45);
+            z-index:1;
+        }
+
+        .hero h1,
+        .hero p{
+            position:relative;
+            z-index:2;
+        }
+
+        .section{
+            max-width:1200px;
+            margin:auto;
+            padding:60px 20px;
+            text-align:center;
+        }
+
+        .section h2{
+            color:#667eea;
+            font-size:36px;
+            margin-bottom:15px;
+        }
+
+        .section-subtitle{
+            margin-bottom:40px;
+            color:#777;
+        }
+
+        .data-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-top:30px;
+        }
+
+        .data-card{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,.08);
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .data-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 15px 30px rgba(102,126,234,.25);
+        }
+
+        .data-card h3{
+            color:#667eea;
+            margin-bottom:10px;
+        }
+
+        .modal{
+            display:none;
+            position:fixed;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,.6);
+            z-index:9999;
+        }
+
+        .modal-content{
+            background:white;
+            width:80%;
+            max-width:700px;
+            margin:7% auto;
+            padding:30px;
+            border-radius:15px;
+            position:relative;
+        }
+
+        .large-modal{
+            max-width:900px;
+        }
+
+        .close{
+            position:absolute;
+            top:10px;
+            right:20px;
+            font-size:30px;
+            cursor:pointer;
+        }
+
+        .box{
+            background:white;
+            padding:25px;
+            margin-top:25px;
+            border-radius:12px;
+            box-shadow:0 5px 15px rgba(0,0,0,.08);
+        }
+
+        .box h3{
+            color:#667eea;
+            margin-bottom:15px;
+        }
+
+        .box p{
+            margin-bottom:15px;
+            line-height:1.7;
+            color:#555;
+        }
+
+        .box ul{
+            padding-left:20px;
+            line-height:1.8;
+            color:#444;
+            text-align:left;
+        }
+
+        .box li{
+            margin-bottom:10px;
+        }
+
+        .pdf-link{
+            display:inline-block;
+            margin-top:30px;
+            padding:12px 18px;
+            background:#06345C;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+            transition:.3s;
+        }
+
+        .pdf-link:hover{
+            background:#ffd700;
+            color:#06345C;
+        }
+
+        footer{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:50px;
+        }
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.navbar {
+    background: linear-gradient(135deg, #06345C 100%);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.navbar-logo a {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-logo a:hover {
+    opacity: 0.8;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ffd700;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffd700;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+/* SECTION */
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.section h2{
+    color:#667eea;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    margin-bottom:40px;
+    color:#777;
+}
+
+/* CARDS */
+.data-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.data-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.data-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(102,126,234,.25);
+}
+
+.data-card h3{
+    color:#667eea;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:9999;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+    overflow-y:auto;
+}
+
+.modal-content{
+    background:white;
+    width:100%;
+    max-width:700px;
+
+    max-height:90vh;
+    overflow-y:auto;
+
+    padding:30px;
+    border-radius:15px;
+    position:relative;
+
+    animation:fadeIn .3s ease;
+}
+
+.large-modal{
+    max-width:900px;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th,
+table td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+table th{
+    background:#667eea;
+    color:white;
+}
+
+table a{
+    color:#667eea;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+table a:hover{
+    text-decoration:underline;
+}
+
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #06345C;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        padding: 15px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-logo a {
+        font-size: 20px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .section h2 {
+        font-size: 22px;
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-menu{
+        position:absolute;
+        top:70px;
+        left:-100%;
+        flex-direction:column;
+        background:#667eea;
+        width:100%;
+        text-align:center;
+        transition:.3s;
+        gap:0;
+    }
+
+    .nav-menu.active{
+        left:0;
+    }
+
+    .nav-item{
+        padding:15px 0;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+}
+  /* CARD SECTION WRAPPER */
+.card-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.card-section-title {
+    text-align: center;
+    color: #06345C;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* THE GRID CONTAINER */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* INDIVIDUAL CARD */
+.image-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image zoom effect on card hover */
+.image-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(6, 52, 92, 0.15);
+}
+
+/* IMAGE WRAPPER */
+.image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom in image slightly on hover */
+.image-card:hover .image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* CARD TEXT CONTENT */
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content h3 {
+    color: #06345C;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    
+    .card-section-title {
+        font-size: 26px;
+    }
+}
+
+    </style>
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="navbar-container">
+
+            <div class="navbar-logo">
+                <a href="#home">BicolWork</a>
+            </div>
+
+            <ul class="nav-menu">
+
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Data Gathering</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#usability" class="nav-link">Usability Report</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#results" class="nav-link">Results</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+        <h1>Welcome to BicolWork</h1>
+
+        <p>
+            The Home Page introduces the Website being evaluated by showing its title,
+            the names and roles of group members, and their photos.
+        </p>
+
+        <img src="https://macatirecruitment.com/wp-content/uploads/2024/01/The-Benefits-of-Hiring-Philippine-Staff-for-Local-Projects-in-Australia-and-New-Zealand-Macati-Recruitment-1500x1000.jpg"
+             alt="Construction Workers">
+
+    </section>
+
+<section class="card-section">
+    <h2 class="card-section-title">Group 3 Members</h2>
+    
+    <div class="card-grid">
+        <div class="image-card">
+            <div class="image-wrapper">
+                 <img src="images/rommel.jpg" alt="Male student wearing uniform" >
+            </div>
+            <div class="card-content">
+                <h3>Rommel Bacares Jr.</h3>
+                <p>Group Leader</p>
+            </div>
+        </div>
+
+        <div class="image-card">
+            <div class="image-wrapper">
+                <img src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/646718343_122111899533227398_3959842613033796682_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=108&ccb=1-7&_nc_sid=3da8dc&_nc_eui2=AeEJ_G3PR5kGb97F9aYeqMH1qZ1sSJALqTupnWxIkAupO27ikm3Nk-P78O6RY-1rLXyiXXiJqx0hleU7WnA0PGnP&_nc_ohc=rJasTcviu6IQ7kNvwEfUAuj&_nc_oc=Adq1_JUoUro0mcpuuT-ZUx9rijQbRIHw8FEWxUnH7BqT7vNh9F_MaHRyo086lFtzRY0&_nc_zt=23&_nc_ht=scontent.fwnp1-1.fna&_nc_gid=YkiAHBMfSaoAot8E2mmRmg&_nc_ss=7b2a8&oh=00_Af7hNRK10PPdUPxaKWtO3iD3HjuvVfdXoaGQ7tQD8-Z_rA&oe=69FCE4FB" alt="Office desk setup">
+            </div>
+            <div class="card-content">
+                <h3>Sean Henjie Valisto</h3>
+                <p>Member</p>
+            </div>
+        </div>
+
+        <div class="image-card">
+            <div class="image-wrapper">
+              <img src="images/cristian.jpg" alt="Male student wearing uniform">
+            </div>
+            <div class="card-content">
+                <h3>Cristian Geopano</h3>
+                <p>Member</p>
+            </div>
+        </div>
+
+        <div class="image-card">
+            <div class="image-wrapper">
+               <img src="images/chelsea.png" alt="Female smiling in black ">
+            </div>
+            <div class="card-content">
+                <h3>Chelsea Rodrigueza</h3>
+                <p>Member</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- DATA GATHERING -->
+    <section id="about" class="section">
+
+        <h2>Data Gathering</h2>
+
+        <p>
+            This page focuses on collecting evaluation data from respondents.
+            It includes the Consent Form and SUS Survey, Respondent Profiles or summaries, and Documentation section for reports and photos during testing.
+        </p>
+
+        <div class="data-container">
+
+            <div class="data-card"
+                 onclick="window.open('https://forms.gle/TBNwzZsZMgM1XcAn9','_blank')">
+
+                <h3>Consent Form & SUS Questionnaire</h3>
+
+                <p>
+                    View participant consent form and SUS questionnaire in a new tab.
+                </p>
+
+            </div>
+<div class="modal" id="respondentModal">
+    <div class="modal-content large-modal">
+        <span class="close" onclick="closeModal('respondentModal')">&times;</span>
+        
+        <h2>Respondent Information Records</h2>
+        
+        <div class="box" style="overflow-x: auto;">  <table>
+    <tr>
+      <th>Timestamp</th>
+      <th>Consent</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Course Year & Level</th>
+      <th>Experience</th>
+      <th>Frequency</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th>Q5</th>
+      <th>Q6</th>
+      <th>Q7</th>
+      <th>Q8</th>
+      <th>Q9</th>
+      <th>Q10</th>
+      <th>Likes</th>
+      <th>Suggestions</th>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:09:49</td><td>Agreed</td><td>20</td><td>Male</td><td>BSCE - 2A</td><td>Yes</td><td>Daily</td><td>4</td><td>2</td><td>4</td><td>2</td><td>4</td><td>2</td><td>5</td><td>2</td><td>5</td><td>2</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:10:37</td><td>Agreed</td><td>19</td><td>Male</td><td>BSCE 2A</td><td>No</td><td>Daily</td><td>3</td><td>2</td><td>5</td><td>2</td><td>4</td><td>2</td><td>5</td><td>2</td><td>3</td><td>2</td><td>Its purpose for easy employment</td><td>Add location based job finding</td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:10:48</td><td>Agreed</td><td>22</td><td>Male</td><td>BSCE 3A</td><td>No</td><td>Daily</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:11:10</td><td>Agreed</td><td>20</td><td>Female</td><td>BSCE-2A</td><td>No</td><td>Daily</td><td>3</td><td>1</td><td>5</td><td>2</td><td>4</td><td>2</td><td>4</td><td>2</td><td>4</td><td>2</td><td>It is easy to use.</td><td>None</td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:12:52</td><td>Agreed</td><td>20</td><td>Male</td><td>BSCE-2A</td><td>Yes</td><td>Monthly</td><td>5</td><td>4</td><td>4</td><td>3</td><td>4</td><td>2</td><td>4</td><td>3</td><td>5</td><td>3</td><td>Very direct to its main function</td><td>None</td>
+    </tr>
+    
+    <tr>
+      <td>5/2/2026 19:14:35</td><td>Agreed</td><td>20</td><td>Male</td><td>BSCE 2A</td><td>No</td><td>Daily</td>
+      <td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>5</td>
+      <td>How the system was very user friendly</td><td>Nothing much</td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:16:47</td><td>Agreed</td><td>19</td><td>Female</td><td>BSCE 2A</td><td>No</td><td>Daily</td>
+      <td>3</td><td>4</td><td>4</td><td>4</td><td>4</td><td>2</td><td>4</td><td>3</td><td>3</td><td>4</td>
+      <td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:17:10</td><td>Agreed</td><td>20</td><td>Female</td><td>BSCE 2A</td><td>No</td><td>Daily</td>
+      <td>4</td><td>3</td><td>3</td><td>2</td><td>4</td><td>3</td><td>4</td><td>2</td><td>4</td><td>2</td>
+      <td>The purpose behind it was very well thought and timely. Convenient to use.</td><td>None</td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:19:07</td><td>Agreed</td><td>21</td><td>Male</td><td>BSHM-2C</td><td>Yes</td><td>Daily</td>
+      <td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td>
+      <td>N/A</td><td>N/A</td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:25:14</td><td>Agreed</td><td>20</td><td>Male</td><td>Bsecon 2a</td><td>Yes</td><td>Daily</td>
+      <td>4</td><td>4</td><td>5</td><td>4</td><td>5</td><td>4</td><td>5</td><td>4</td><td>5</td><td>5</td>
+      <td>Nothing, all good and convenient to use</td><td>Nothing, all good</td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:29:04</td><td>Agreed</td><td>21</td><td>Male</td><td>BACOM 3A</td><td>Yes</td><td>Daily</td>
+      <td>5</td><td>3</td><td>4</td><td>1</td><td>5</td><td>1</td><td>3</td><td>1</td><td>4</td><td>4</td>
+      <td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:31:42</td><td>Agreed</td><td>20</td><td>Female</td><td>BS Economics 3A</td><td>No</td><td>Daily</td>
+      <td>5</td><td>5</td><td>3</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>2</td>
+      <td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:42:54</td><td>Agreed</td><td>20</td><td>Male</td><td>BSCE 2</td><td>No</td><td>Monthly</td>
+      <td>4</td><td>3</td><td>4</td><td>2</td><td>4</td><td>3</td><td>4</td><td>2</td><td>3</td><td>4</td>
+      <td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 19:51:17</td><td>Agreed</td><td>22</td><td>Male</td><td>BET-MET-RAC 3A</td><td>No</td><td>Weekly</td>
+      <td>5</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>5</td><td>5</td><td>5</td><td>4</td>
+      <td>This is helpful for some need this</td><td>None</td>
+    </tr>
+    <tr>
+      <td>5/2/2026 20:05:27</td><td>Agreed</td><td>22</td><td>Male</td><td>BSCE3A</td><td>Yes</td><td>Daily</td>
+      <td>3</td><td>2</td><td>4</td><td>4</td><td>4</td><td>4</td><td>5</td><td>1</td><td>3</td><td>3</td>
+      <td>The fact that its features is integrated</td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 20:08:33</td><td>Agreed</td><td>20</td><td>Male</td><td>BSEd-English 3A</td><td>Yes</td><td>Daily</td>
+      <td>3</td><td>3</td><td>4</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>3</td><td>3</td>
+      <td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/2/2026 20:21:30</td><td>Agreed</td><td>23</td><td>Female</td><td>BSED-FIL 3A</td><td>No</td><td>Daily</td>
+      <td>3</td><td>3</td><td>4</td><td>3</td><td>4</td><td>3</td><td>5</td><td>2</td><td>4</td><td>3</td>
+      <td>The system is very simple and easy to understand.</td>
+      <td>Improve functionality: add location display, time/day options for jobs.</td>
+    </tr>
+      <tr>
+      <td>5/2/2026 20:54:37</td><td>Agreed</td><td>21</td><td>Female</td><td>BSEd - Filipino 3A</td><td>No</td><td>Daily</td>
+      <td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td><td>5</td><td>1</td>
+      <td>N/A</td><td>N/A</td>
+    </tr>
+    <tr>
+    <tr>
+      <td>5/2/2026 21:56:38</td><td>Agreed</td><td>21</td><td>Male</td><td>BSCE-2A</td><td>Yes</td><td>Daily</td>
+      <td>4</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td>
+      <td></td><td></td>
+    </tr>
+    <tr>
+      <td>5/3/2026 0:09:16</td><td>Agreed</td><td>20</td><td>Female</td><td>BSENT-1B</td><td>No</td><td>Daily</td>
+      <td>3</td><td>2</td><td>3</td><td>4</td><td>4</td><td>3</td><td>4</td><td>3</td><td>3</td><td>4</td>
+      <td>Easy to use, connects local workers and employers directly, focuses on regional jobs</td>
+      <td>Add search filters, local language options, mobile optimization, notifications</td>
+    </tr>
+    <tr>
+      <td>5/3/2026 11:37:14</td><td>Agreed</td><td>20</td><td>Female</td><td>BSOA 3A</td><td>Yes</td><td>Daily</td>
+      <td>4</td><td>3</td><td>4</td><td>3</td><td>4</td><td>3</td><td>4</td><td>2</td><td>3</td><td>2</td>
+      <td>I like how innovative the system is</td><td>Further research for improvement</td>
+    </tr>
+ </table>
+ </div>
+    </div>
+</div>
+            <div class="data-card" onclick="openModal('respondentModal')">
+
+                <h3>Respondent Information</h3>
+
+                <p>
+                    View respondent records.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('docModal')">
+
+                <h3>Documentation</h3>
+
+                <p>
+                    View reports and photos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- USABILITY TESTING REPORT -->
+    <section id="usability" class="section">
+
+        <h2>Usability Testing Report</h2>
+
+        <p>
+            Click any card to view the usability testing details.
+        </p>
+
+        <div class="data-container">
+
+            <div class="data-card" onclick="openModal('summaryUsabilityModal')">
+
+                <h3>Summary of Usability Testing Results</h3>
+
+                <p>
+                    View the overall usability testing summary.
+                </p>
+<canvas>
+            
+<div class="visual-container" style="text-align: center; margin: 20px 0;">
+                <img src="your-graph-image.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+                
+                <div style="background: #eee; border-radius: 5px; height: 30px; width: 100%; margin-top: 10px;">
+                    <div style="background: #06345C; height: 100%; width: 85%; border-radius: 5px; color: white; padding-left: 10px; line-height: 30px;">
+                        85% Task Success Rate
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="data-card" onclick="openModal('issuesModal')">
+
+                <h3>Key Issues Identified</h3>
+
+                <p>
+                    View the usability problems discovered during testing.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('discussionModal')">
+
+                <h3>Discussion of Findings</h3>
+
+                <p>
+                    View discussion and interpretation of usability findings.
+                </p>
+
+            </div>
+
+        </div>
+<div class="modal" id="summaryUsabilityModal">
+    <div class="modal-content large-modal">
+        <span class="close" onclick="closeModal('summaryUsabilityModal')">&times;</span>
+
+        <h2>Summary of Usability Testing Results</h2>
+
+        <div class="box">
+            <p>Overall, participants were able to complete the core tasks, but several usability issues were observed during navigation and task execution.</p>
+        </div>
+
+     
+
+    </div>
+</div>
+        <a href="https://media.nngroup.com/media/articles/attachments/Heuristic_Evaluation_Workbook_-_Nielsen_Norman_Group.pdf"
+           target="_blank"
+           class="pdf-link">
+
+            📄 Download Heuristic Evaluation Workbook (PDF)
+
+        </a>
+
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="section">
+
+        <h2>Results</h2>
+
+        <p>
+            Click any card to view results, discussions, and recommendations.
+        </p>
+
+        <div class="data-container">
+
+            <div class="data-card" onclick="openModal('summaryModal')">
+
+                <h3>Summary of Results</h3>
+
+                <p>
+                    View usability evaluation summary and findings.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('jobModal')">
+
+                <h3>Job Matching Results</h3>
+
+                <p>
+                    View job matching evaluation and system performance.
+                </p>
+
+            </div>
+
+            <div class="data-card" onclick="openModal('recommendationModal')">
+
+                <h3>Discussion & Recommendations</h3>
+
+                <p>
+                    View recommendations and suggested improvements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- USABILITY SUMMARY MODAL -->
+    <div class="modal" id="summaryUsabilityModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('summaryUsabilityModal')">
+                  &times;
+            </span>
+
+            <h2>Summary of Usability Testing Results</h2>
+
+            <div class="box">
+
+                <p>
+                    Overall, participants were able to complete the core tasks,
+                    but several usability issues were observed during navigation
+                    and task execution.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ISSUES MODAL -->
+    <div class="modal" id="issuesModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('issuesModal')">
+                  &times;
+            </span>
+
+            <h2>Key Issues Identified</h2>
+
+            <div class="box">
+
+                <ul>
+                    <li>Navigation menus were confusing and inconsistent.</li>
+                    <li>Some buttons lacked clear labels.</li>
+                    <li>Loading times were longer than expected.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DISCUSSION MODAL -->
+    <div class="modal" id="discussionModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('discussionModal')">
+                  &times;
+            </span>
+
+            <h2>Discussion of Findings</h2>
+
+            <div class="box">
+
+                <p>
+                    The issues identified suggest that while the prototype is functional,
+                    improvements are needed in clarity, speed, and consistency
+                    to enhance user satisfaction.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SUMMARY MODAL -->
+    <div class="modal" id="summaryModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('summaryModal')">
+                  &times;
+            </span>
+
+            <h2>Summary of Results</h2>
+
+            <div class="box">
+
+                <p>
+                    The usability evaluation of the Bicol Job Working System shows that users were able
+                    to understand basic system functions, but experienced difficulties in navigation,
+                    clarity of job information, and system responsiveness.
+                </p>
+<div class="visual-container" style="text-align: center; margin: 20px 0;">
+                <img src="images/volunter.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+            
+              <img src="images/demographicProfile.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+                <img src="images/gender.png" alt="Pie Graph of SUS Gender" style="max-width: 100%; border-radius: 8px;">
+                <img src="images/year.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+                <img src="images/usage of technology.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+		    <img src="images/likerscale.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+			    <img src="images/2Liker.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+    <img src="images/3.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/4.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/5.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/6.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/7.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/8.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/9.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/10.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/opinion.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+<img src="images/sugesstion.png" alt="Bar Graph of SUS Scores" style="max-width: 100%; border-radius: 8px;">
+
+                <div style="background: #eee; border-radius: 5px; height: 30px; width: 100%; margin-top: 10px;">
+                    <div style="background: #06345C; height: 100%; width: 85%; border-radius: 5px; color: white; padding-left: 10px; line-height: 30px;">
+                        85% Task Success Rate
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JOB MODAL -->
+    <div class="modal" id="jobModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('jobModal')">
+                  &times;
+            </span>
+
+            <h2>Job Matching Results</h2>
+
+            <div class="box">
+
+                <ul>
+                    <li>The system successfully recommends jobs based on user skills.</li>
+                    <li>Location-based filtering helps users find nearby opportunities.</li>
+                    <li>Some mismatches occur due to incomplete user profiles.</li>
+                    <li>System speed affects real-time job matching.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RECOMMENDATION MODAL -->
+    <div class="modal" id="recommendationModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('recommendationModal')">
+                  &times;
+            </span>
+
+            <h2>Discussion & Recommendations</h2>
+
+            <div class="box">
+
+                <ul>
+                    <li>Improve navigation with a more user-friendly layout.</li>
+                    <li>Ensure all job listings have complete and clear details.</li>
+                    <li>Use consistent and descriptive button labels.</li>
+                    <li>Optimize system performance for faster loading.</li>
+                    <li>Enhance UI design for better readability and structure.</li>
+                    <li>Conduct further usability testing after improvements.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Contact Information
+        </p>
+
+    </footer>
+
+    <script>
+
+        function openModal(id){
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id){
+            document.getElementById(id).style.display = "none";
+        }
+
+        window.onclick = function(event){
+
+            const modals = document.querySelectorAll('.modal');
+
+            modals.forEach(modal => {
+
+                if(event.target == modal){
+                    modal.style.display = "none";
+                }
+
+            });
+
+        }
+
+   document.addEventListener('DOMContentLoaded', function() {
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    if (hamburger && navMenu) {
+
+        hamburger.addEventListener('click', function() {
+
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+
+            link.addEventListener('click', function() {
+
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+
+            });
+
+        });
+
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+        anchor.addEventListener('click', function(e) {
+
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute('href'));
+
+            if (target) {
+
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+            }
+
+        });
+
+    });
+
+});
+
+function openModal(modalId) {
+
+    document.getElementById(modalId).style.display = 'flex';
+
+}
+
+function closeModal(modalId) {
+
+    document.getElementById(modalId).style.display = 'none';
+
+}
+
+window.addEventListener('click', function(e) {
+
+    document.querySelectorAll('.modal').forEach(modal => {
+
+        if (e.target === modal) {
+
+            modal.style.display = 'none';
+
+        }
+
+    });
+
+});// Initialize the Live Chart when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('liveUsabilityChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Task Success', 'Nav Clarity', 'Layout', 'Speed', 'Satisfaction'],
+            datasets: [{
+                label: 'User Rating (out of 5)',
+                data: [4.2, 3.1, 3.8, 2.9, 4.0], // Sample data based on your summary
+                backgroundColor: [
+                    '#06345C', '#667eea', '#06345C', '#667eea', '#ffd700'
+                ],
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true, max: 5 }
+            }
+        }
+    });
+});
+ </script>
+</body>
+</html>
+
