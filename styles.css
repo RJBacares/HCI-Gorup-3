@@ -171,6 +171,10 @@ footer{
     animation:fadeIn .3s ease;
 }
 
+.modal.active{
+    display:flex;
+}
+
 .large-modal{
     max-width:900px;
 }

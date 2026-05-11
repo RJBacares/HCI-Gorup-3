@@ -154,16 +154,21 @@
             height:100%;
             background:rgba(0,0,0,.6);
             z-index:9999;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
         }
 
         .modal-content{
             background:white;
-            width:80%;
-            max-width:700px;
-            margin:7% auto;
+            width:100%;
+            max-width:900px;
+            max-height:calc(100vh - 60px);
+            overflow-y:auto;
             padding:30px;
             border-radius:15px;
             position:relative;
+            margin:0 auto;
         }
 
         .large-modal{
@@ -303,7 +308,7 @@
 
                 <h3>Consent Form & SUS Questionnaire</h3>
 
-                <p>
+                <p> 
                     View participant consent form and SUS questionnaire in a new tab.
                 </p>
 
@@ -332,6 +337,623 @@
         </div>
 
     </section>
+
+    <!-- DOCUMENTATION MODAL -->
+    <div class="modal" id="docModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                  onclick="closeModal('docModal')">
+                  &times;
+            </span>
+
+            <h2>Documentation</h2>
+
+            <!-- DATE SECTION 1 -->
+            <div class="box">
+
+                <h3>March 6, 2026</h3>
+
+                <p>
+                    Assign tasks to each member, corresponding members should accomplish their assigned tasks.
+                </p>
+
+                <ul>
+                    <li>Login/Register</li>
+                    <li>Dashboard</li>
+                    <li>Main features</li>
+                    <li>Profile</li>
+                    <li>Logout</li>
+                    <li>Admin login</li>
+                    <li>Approve requests</li>
+                    <li>Reports</li>
+                </ul>
+
+                <img src="images/testing1.jpg"
+                     alt="Testing Session 1"
+                     class="documentation-image">
+
+            </div>
+
+            <!-- DATE SECTION 2 -->
+            <div class="box">
+
+                <h3>April 15, 2026</h3>
+
+                <p>
+                    Second testing session focused on evaluating navigation,
+                    job matching functionality, and interface responsiveness.
+                </p>
+
+                <ul>
+                    <li>Tested job search functionality</li>
+                    <li>Observed navigation issues</li>
+                    <li>Recorded usability concerns</li>
+                    <li>Gathered additional participant comments</li>
+                </ul>
+
+                <img src="images/testing2.jpg"
+                     alt="Testing Session 2"
+                     class="documentation-image">
+
+            </div>
+
+            <!-- DATE SECTION 3 -->
+            <div class="box">
+
+                <h3>April 20, 2026</h3>
+
+                <p>
+                    Final evaluation and documentation gathering were completed.
+                    Recommendations for improvement were discussed based on the
+                    collected usability data.
+                </p>
+
+                <ul>
+                    <li>Finalized usability observations</li>
+                    <li>Reviewed participant suggestions</li>
+                    <li>Prepared summary findings</li>
+                    <li>Completed documentation photos</li>
+                </ul>
+
+                <img src="images/testing3.jpg"
+                     alt="Testing Session 3"
+                     class="documentation-image">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RESPONDENT INFORMATION MODAL -->
+    <div class="modal" id="respondentModal">
+
+        <div class="modal-content large-modal">
+
+            <span class="close"
+                onclick="closeModal('respondentModal')">
+                &times;
+            </span>
+
+            <h2>Respondent Information Records</h2>
+
+            <div class="box" style="overflow-x:auto;">
+
+                <table>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Consent</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Course Year & Level</th>
+                        <th>Experience</th>
+                        <th>Frequency</th>
+                        <th>Q1</th>
+                        <th>Q2</th>
+                        <th>Q3</th>
+                        <th>Q4</th>
+                        <th>Q5</th>
+                        <th>Q6</th>
+                        <th>Q7</th>
+                        <th>Q8</th>
+                        <th>Q9</th>
+                        <th>Q10</th>
+                        <th>Likes</th>
+                        <th>Suggestions</th>
+                    </tr>
+
+                <tr>
+                    <td>5/2/2026 19:09:49</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Male</td>
+                    <td>BSCE - 2A</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>5/2/2026 19:10:37</td>
+                    <td>Agreed</td>
+                    <td>19</td>
+                    <td>Male</td>
+                    <td>BSCE 2A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>5</td >
+                    <td>2</td >
+                    <td>4</td >
+                    <td>2</td >
+                    <td>5</td >
+                    <td>2</td >
+                    <td>3</td >
+                    <td>2</td >
+                    <td>Its purpose for easy employment</td >
+                    <td>Add location based job finding</td >
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:10:48</td>
+                    <td>Agreed</td>
+                    <td>22</td>
+                    <td>Male</td>
+                    <td>BSCE 3A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+                
+                <tr>
+                    <td>5/2/2026 19:11:10</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Female</td>
+                    <td>BSCE-2A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>It is easy to use.</td>
+                    <td>None</td>
+                </tr>
+                
+                <tr>
+                    <td>5/2/2026 19:12:52</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Male</td>
+                    <td>BSCE-2A</td>
+                    <td>Yes</td>
+                    <td>Monthly</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>Very direct to its main function</td>
+                    <td>None</td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:14:35</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Male</td>
+                    <td>BSCE 2A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+                
+                <tr>
+                    <td>5/2/2026 19:14:35</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Male</td>
+                    <td>BSCE 2A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>How the system was very user friendly</td>
+                    <td>Nothing much</td>
+                </tr>
+                
+                <tr>
+                    <td>5/2/2026 19:16:47</td>
+                    <td>Agreed</td>
+                    <td>19</td>
+                    <td>Female</td>
+                    <td>BSCE 2A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+                
+                <tr>
+                    <td>5/2/2026 19:17:10</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Female</td>
+                    <td>BSCE 2A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>The purpose behind it was very well thought and timely. Convenient to use.</td>
+                    <td>N/A</td>
+                    <td>None</td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:19:07</td>
+                    <td>Agreed</td>
+                    <td>21</td>
+                    <td>Male</td>
+                    <td>BSHM-2C</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:25:14</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Male</td>
+                    <td>Bsecon 2a</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>Nothing, all good and convenient to use</td>
+                    <td>Nothing, all good</td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:29:04</td>
+                    <td>Agreed</td>
+                    <td>21</td>
+                    <td>Male</td>
+                    <td>BACOM 3A</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:31:42</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Female</td>
+                    <td>BS Economics 3A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:42:54</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Male</td>
+                    <td>BSCE 2</td>
+                    <td>No</td>
+                    <td>Monthly</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 19:51:17</td>
+                    <td>Agreed</td>
+                    <td>22</td>
+                    <td>Male</td>
+                    <td>BET-MET-RAC 3A</td>
+                    <td>No</td>
+                    <td>Weekly</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>This is helpful for some need this</td>
+                    <td>None</td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 20:05:27</td>
+                    <td>Agreed</td>
+                    <td>22</td>
+                    <td>Male</td>
+                    <td>BSCE3A</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>The fact that its features is integrated</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 20:08:33</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Male</td>
+                    <td>BSEd-English 3A</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 20:21:30</td>
+                    <td>Agreed</td>
+                    <td>23</td>
+                    <td>Female</td>
+                    <td>BSED-FIL 3A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>The system is very simple and easy to understand.</td>
+                    <td>Improve functionality: add location display, time/day options for jobs.</td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 20:54:37</td>
+                    <td>Agreed</td>
+                    <td>21</td>
+                    <td>Female</td>
+                    <td>BSEd - Filipino 3A</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+
+                <tr>
+                    <td>5/2/2026 21:56:38</td>
+                    <td>Agreed</td>
+                    <td>21</td>
+                    <td>Male</td>
+                    <td>BSCE-2A</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+
+                <tr>
+                    <td>5/3/2026 0:09:16</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Female</td>
+                    <td>BSENT-1B</td>
+                    <td>No</td>
+                    <td>Daily</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>Easy to use, connects local workers and employers directly, focuses on regional jobs</td>
+                    <td>Add search filters, local language options, mobile optimization, notifications</td>
+                </tr>
+
+                <tr>
+                    <td>5/3/2026 11:37:14</td>
+                    <td>Agreed</td>
+                    <td>20</td>
+                    <td>Female</td>
+                    <td>BSOA 3A</td>
+                    <td>Yes</td>
+                    <td>Daily</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>I like how innovative the system is</td>
+                    <td>Further research for improvement</td>
+                </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- USABILITY TESTING REPORT -->
     <section id="usability" class="section">
@@ -510,30 +1132,102 @@
     </div>
 
     <!-- SUMMARY MODAL -->
-    <div class="modal" id="summaryModal">
+        <div class="modal" id="summaryModal">
 
-        <div class="modal-content large-modal">
+            <div class="modal-content large-modal">
 
-            <span class="close"
-                  onclick="closeModal('summaryModal')">
-                  &times;
-            </span>
+                <span class="close"
+                    onclick="closeModal('summaryModal')">
+                    &times;
+                </span>
 
-            <h2>Summary of Results</h2>
+                <h2>Summary of Results</h2>
 
-            <div class="box">
+                    <p>
+                        The usability evaluation of the Bicol Job Working System shows that users were able
+                        to understand basic system functions, but experienced difficulties in navigation,
+                        clarity of job information, and system responsiveness.
+                    </p>
 
-                <p>
-                    The usability evaluation of the Bicol Job Working System shows that users were able
-                    to understand basic system functions, but experienced difficulties in navigation,
-                    clarity of job information, and system responsiveness.
-                </p>
+                    <div class="visual-container" style="text-align:center; margin:20px 0;">
+                        
+                        <div class="box">
+                            <img src="images/volunter.png" alt="Volunteer Chart" style="max-width:100%; border-radius:8px;">
+                        </div>
+                        
+                        <div class="box">
+                            <img src="images/demographicProfile.png" alt="Demographic Profile" style="max-width:100%; border-radius:8px;">
+                        </div>
 
+                        <div class="box">
+                            <img src="images/gender.png" alt="Gender Chart" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/year.png" alt="Year Level Chart" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/usage of technology.png" alt="Technology Usage" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/likerscale.png" alt="Likert Scale" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/2Liker.png" alt="Likert Chart 2" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/3.png" alt="Chart 3" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/4.png" alt="Chart 4" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/5.png" alt="Chart 5" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/6.png" alt="Chart 6" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/7.png" alt="Chart 7" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/8.png" alt="Chart 8" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/9.png" alt="Chart 9" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/10.png" alt="Chart 10" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/opinion.png" alt="Opinion Chart" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div class="box">
+                            <img src="images/sugesstion.png" alt="Suggestion Chart" style="max-width:100%; border-radius:8px;">
+                        </div>
+
+                        <div style="background:#eee; border-radius:5px; height:30px; width:100%; margin-top:10px;">
+                            <div style="background:#06345C; height:100%; width:85%; border-radius:5px; color:white; padding-left:10px; line-height:30px;">
+                                85% Task Success Rate
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
-
-    </div>
 
     <!-- JOB MODAL -->
     <div class="modal" id="jobModal">
@@ -603,10 +1297,14 @@
     <script>
 
         function openModal(id){
-            document.getElementById(id).style.display = "block";
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+            document.getElementById(id).style.display = "flex";
         }
 
         function closeModal(id){
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
             document.getElementById(id).style.display = "none";
         }
 
@@ -618,6 +1316,8 @@
 
                 if(event.target == modal){
                     modal.style.display = "none";
+                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = '';
                 }
 
             });

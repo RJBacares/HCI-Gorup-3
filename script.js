@@ -51,12 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function openModal(modalId) {
 
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
     document.getElementById(modalId).style.display = 'flex';
 
 }
 
 function closeModal(modalId) {
 
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
     document.getElementById(modalId).style.display = 'none';
 
 }
@@ -68,6 +72,8 @@ window.addEventListener('click', function(e) {
         if (e.target === modal) {
 
             modal.style.display = 'none';
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
 
         }
 
